@@ -7,7 +7,6 @@
     creating customer objects.  
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Below is a cart array that has food objects
@@ -19,25 +18,25 @@
 */
 
 const cart = [
-    {
-        name: 'pizza', 
-        price: 9.99
-    }, 
-    {
-        name: 'pasta', 
-        price: 8.99
-    }, 
-    {
-        name: 'salad', 
-        price: 7.99
-    }
-]
+  {
+    name: "pizza",
+    price: 9.99,
+  },
+  {
+    name: "pasta",
+    price: 8.99,
+  },
+  {
+    name: "salad",
+    price: 7.99,
+  },
+];
 
-//CODE HERE
+const summedPrice = cart.reduce((acc, curr) => {
+  return acc + curr.price;
+}, 0);
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
-
+console.log(summedPrice);
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -53,9 +52,10 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
-
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+  const finalPrice = cartTotal * (1 + tax) - couponValue;
+  return finalPrice;
+};
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -78,7 +78,11 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    firstName (string) - need this as an identifier
+    lastName (string) - also an identifier to clarify if multiple first names
+    email (string) - used for communication and account identification
+    items (array) - informs what is being ordered
+    totalAmount (number) - allows the store to know how much the product was sold for
 
 */
 
@@ -87,4 +91,10 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+const customer = {
+  firstName: "Alex",
+  lastName: "Nelson",
+  email: "alexnelson97@gmail.com",
+  totalAmount: 45.99,
+  items: ["Pizza", "Salad", "Soda"],
+};
