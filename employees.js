@@ -24,6 +24,9 @@ class Employee {
     this.name = name;
     this.shifts = shifts;
   }
+  getSchedule() {
+    console.log(`${this.name} works on ${this.shifts}`);
+  }
 }
 
 /*
@@ -36,14 +39,17 @@ class Employee {
     shifts: weekday mornings, weekday afternoons
 */
 
-//CODE HERE
+const empOne = new Employee("Alex", [
+  "weekday mornings",
+  " weekday afternoons",
+]);
 
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
-//CODE HERE
+empOne.getSchedule();
 
 /*
     Make a copy of the empOne object
@@ -57,7 +63,9 @@ class Employee {
     dot or bracket notation.
 */
 
-//CODE HERE
+const empTwo = { ...empOne };
+
+empTwo.name = "Nick";
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -82,8 +90,20 @@ class Employee {
     the employees array. 
 */
 
-//CODE HERE
+class Manager extends Employee {
+  constructor(name, shifts, employees) {
+    super(name, shifts);
+    this.employees = employees;
+  }
 
+  getEmployees() {
+    console.log(`${this.name} manages ${this.employees.join(", ")}`);
+  }
+
+  addEmployee(emp) {
+    this.employees.push(emp);
+  }
+}
 /*
     Create a new instance of your class.
     Save it to a variable called `manager`.
@@ -95,14 +115,16 @@ class Employee {
     employees: Cece and Schmidt
 */
 
-//CODE HERE
-
+const manager = new Manager("Winston", "weekday mornings, weekday afternoons", [
+  "Cece",
+  "Schmidt",
+]);
 /*
     Call the `getEmployees` method on the
     `manager` object.  
 */
 
-//CODE HERE
+manager.getEmployees();
 
 /*
     Call the `addEmployee` method on the 
@@ -110,12 +132,11 @@ class Employee {
     'Coach' or whatever name you'd like.
 */
 
-//CODE HERE
-
+manager.addEmployee(`coach`);
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
     that an employee was added.
 */
 
-//CODE HERE
+manager.getEmployees();
