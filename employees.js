@@ -19,9 +19,12 @@
     stored on the object.
 */
 
-//CODE HERE
-
-
+class Employee {
+  constructor(name, shifts) {
+    this.name = name;
+    this.shifts = shifts;
+  }
+}
 
 /*
     Create a new instance of your class.
@@ -42,7 +45,6 @@
 
 //CODE HERE
 
-
 /*
     Make a copy of the empOne object
     using the spread operator.
@@ -56,8 +58,6 @@
 */
 
 //CODE HERE
-
-
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -84,8 +84,6 @@
 
 //CODE HERE
 
-
-
 /*
     Create a new instance of your class.
     Save it to a variable called `manager`.
@@ -98,7 +96,6 @@
 */
 
 //CODE HERE
-
 
 /*
     Call the `getEmployees` method on the
@@ -113,7 +110,7 @@
     'Coach' or whatever name you'd like.
 */
 
-//CODE HERE 
+//CODE HERE
 
 /*
     Call the `getEmployees` method on the
